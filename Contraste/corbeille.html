@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Title of the document</title>
+</head>
+
+<body id="page">
+    <h2 style="text-align: center" id="titre">Contraste Jour/Nuit</h1>
+    <img id="image" alt="contraste" src="img/Jour.png" style="width: 300px"/>
+    <input id="Nuit" class="favorite styled"
+       type="button"
+       value="Nuit" onclick="passagenuit()">
+    <input id="Jour" class="favorite styled"
+       type="button"
+       value="Jour" onclick=" retournormal()">
+</body>
+
+    <style>
+    .styled {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 1);
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+}
+
+.styled:hover {
+    background-color: rgba(199, 199, 199, 1);
+}
+
+.styled:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+</style>
+    
+    
+    <script>
+        
+function passagenuit() {
+    document.getElementById("page").style.backgroundColor = "black";
+    document.getElementById("Nuit").style.backgroundColor = "white";
+    document.getElementById("Jour").style.backgroundColor = "white";
+    document.getElementById("titre").style.color = "white";
+    var x = document.getElementsByTagName("img").item(0);
+    x.setAttribute("src", "img/Nuit.png");
+}
+        
+function retournormal() {
+    document.getElementById("page").style.backgroundColor = "white";
+    document.getElementById("Nuit").style.backgroundColor = "black";
+    document.getElementById("Jour").style.backgroundColor = "black";
+    document.getElementById("titre").style.color = "black";
+    var x = document.getElementsByTagName("img").item(0);
+    x.setAttribute("src", "img/Jour.png");
+}
+</script>
+    
+</html>
